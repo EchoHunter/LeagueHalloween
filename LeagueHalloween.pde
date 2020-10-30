@@ -23,10 +23,12 @@ Pumpkin pumpkin7;
 Pumpkin pumpkin8;
 Pumpkin pumpkin9;
 Pumpkin pumpkin10;
+Pumpkin pumpkin11;
 Ghost ghost1;
 Ghost ghost2;
 Ghost ghost3;
 Ghost ghost4;
+Ghost ghost5;
 
 
 // ---------------------------------------------------------
@@ -47,23 +49,25 @@ void setup() {
   scaryHouse.resize(1000,1000);
   
   // Pumpkin( x, pumpkinColor )
-  pumpkin1 = new Pumpkin(254, #E26238);
-  pumpkin2 = new Pumpkin(173, #E26238);
-  pumpkin3 = new Pumpkin(987, #E26238);
-  pumpkin4 = new Pumpkin(789, #E26238);
-  pumpkin5 = new Pumpkin(591, #E26238);
-  pumpkin6 = new Pumpkin(39, #E26238);
-  pumpkin7 = new Pumpkin(682, #E26238);
-  pumpkin8 = new Pumpkin(474, #E26238);
-  pumpkin9 = new Pumpkin(52, #E26238);
-  pumpkin10 = new Pumpkin(356, #E26238);
-  
+  pumpkin1 = new Pumpkin(25, #E26238);
+  pumpkin2 = new Pumpkin(120, #E26238);
+  pumpkin3 = new Pumpkin(215, #E26238);
+  pumpkin4 = new Pumpkin(310, #E26238);
+  pumpkin5 = new Pumpkin(405, #E26238);
+  pumpkin6 = new Pumpkin(500, #E26238);
+  pumpkin7 = new Pumpkin(595, #E26238);
+  pumpkin8 = new Pumpkin(690, #E26238);
+  pumpkin9 = new Pumpkin(785, #E26238);
+  pumpkin10 = new Pumpkin(880, #E26238);
+  pumpkin11 = new Pumpkin(975, #E26238);
+  spotlight = new Spotlight();
   
   // Ghost( y, speed, flyingDirection )
-  ghost1 = new Ghost(50, 5, "right");
-    ghost2 = new Ghost(780, 1, "left");
-      ghost3 = new Ghost(126, 7, "left");
-        ghost4 = new Ghost(450, 2, "right");
+  ghost1 = new Ghost(100, 5, "right");
+    ghost2 = new Ghost(300, 1, "left");
+      ghost3 = new Ghost(500, 7, "right");
+        ghost4 = new Ghost(700, 2, "left");
+          ghost5 = new Ghost(900,2, "right");
   rainfall = new Rain();
   lightning = new Lightning();
   spotlight = new Spotlight();
@@ -81,16 +85,17 @@ void draw() {
   //    Make at least 2 more new pumpkins. To do this, create new pumpkin 
   //    variables above the setup() method and then initialize them
   //    in setup(). Remember to call their draw() methods here so they appear!
-pumpkin1.draw(true);
-pumpkin2.draw(false);
-pumpkin3.draw(true);
-pumpkin4.draw(false);
-pumpkin5.draw(true);
-pumpkin6.draw(false);
-pumpkin7.draw(true);
-pumpkin8.draw(false);
-pumpkin9.draw(true);
-pumpkin10.draw(false);
+pumpkin1.draw(false);
+pumpkin2.draw(true);
+pumpkin3.draw(false);
+pumpkin4.draw(true);
+pumpkin5.draw(false);
+pumpkin6.draw(true);
+pumpkin7.draw(false);
+pumpkin8.draw(true);
+pumpkin9.draw(false);
+pumpkin10.draw(true);
+pumpkin11.draw(false);
   // 8. Call ghost1.draw() to draw a ghost.
   //    Make at least 2 more new ghosts to fly across the screen.
   //    To do this, create new ghost variables above the setup() method 
@@ -100,14 +105,21 @@ pumpkin10.draw(false);
    ghost2.draw();
     ghost3.draw();
      ghost4.draw();
+       ghost5.draw();
   // 9. Call rainfall.draw( <rainColor> ) to add rain.
-  
+  rainfall.draw(#EA2121);
   // 10. Display "Happy Halloween" somewhere on your display.
   //     *hint* you can use text(), textSize(), and fill()
-  
+  textSize(100);
+  fill(random(255),random(255), random(255));
+  text("Happy Halloween!", 100,100);
   // 11. Call lightning.draw() to draw some lightning;
   //     Can you make lightning crash only when the mouse is pressed?
-  
+ if(mousePressed){
+  lightning.draw(); 
+ }
+ spotlight.draw();
+
   // Try out the other scary house backgrounds and customize
   // your scary house!
   
