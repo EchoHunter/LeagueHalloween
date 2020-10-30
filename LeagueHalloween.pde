@@ -115,10 +115,15 @@ pumpkin11.draw(false);
   text("Happy Halloween!", 100,100);
   // 11. Call lightning.draw() to draw some lightning;
   //     Can you make lightning crash only when the mouse is pressed?
+  
  if(mousePressed){
   lightning.draw(); 
  }
+ 
+spotlight.setSpotlightSize(150);
  spotlight.draw();
+
+ 
 
   // Try out the other scary house backgrounds and customize
   // your scary house!
